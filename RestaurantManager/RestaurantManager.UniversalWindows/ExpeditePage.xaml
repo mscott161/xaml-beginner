@@ -6,12 +6,17 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-
+    <Page.TopAppBar>
+        <AppBar>
+            <AppBarButton Icon="Home" x:Name="btnHome" Label="Home" Click="btnHome_Click" />
+        </AppBar>
+    </Page.TopAppBar>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.9*" />
             <RowDefinition Height="0.1*" />
         </Grid.RowDefinitions>
+        <GridView x:Name="gridView" Grid.Row="0" Background="#FF705D5D" ItemsSource="{Binding OrderItems, Source={StaticResource DataManager}}" />
         <Button x:Name="btnClearAllOrders" Grid.Row="1" Content="**Clear All Orders**" Foreground="White"  HorizontalAlignment="Center" VerticalAlignment="Bottom" />
     </Grid>
 </Page>
